@@ -41,6 +41,9 @@ class Entryscape extends \Modularity\Module
             $data['entryscapeStore']
         );
 
+        //Add view path
+        $data['thisViewPath'] = $this->getDotBasedPath();
+
         //Translations
         $data['lang'] = (object) array(
         );
@@ -73,6 +76,11 @@ class Entryscape extends \Modularity\Module
             rtrim($string, '/'),
             '/'
         );
+    }
+
+    private function getDotBasedPath(): string
+    {
+        return str_replace("/", ".", MODULARITYENTRYSCAPE_MODULE_VIEW_PATH);
     }
 
     /**

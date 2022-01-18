@@ -21,8 +21,7 @@ module.exports = {
      * Add your entry files here
      */
     entry: {
-        //'js/modularity-local-events': './source/js/modularity-local-events.js',
-        'css/modularity-local-events': './source/sass/modularity-local-events.scss',
+        'css/modularity-entryscape': './source/sass/modularity-entryscape.scss',
     },
     /**
      * Output settings
