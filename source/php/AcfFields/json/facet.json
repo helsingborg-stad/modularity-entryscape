@@ -1,0 +1,87 @@
+[{
+    "key": "group_61e6b10aa831e",
+    "title": "Entryscape Facet",
+    "fields": [
+        {
+            "key": "field_61e6b13012e5e",
+            "label": "Entryscape store url",
+            "name": "entryscape_store",
+            "type": "url",
+            "instructions": "Add an url to your entryscape installation https:\/\/subdomain.domain.se. Leave out the folder part from configuration.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61e6b19db04a7",
+            "label": "Context ID",
+            "name": "entryscape_context_id",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_61e6b1d0b04a8",
+            "label": "Click URL",
+            "name": "entryscape_click_url",
+            "type": "page_link",
+            "instructions": "Select a target page where you have your single-view module attached.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mod-entryscape"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/entryscape"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+}]
+
