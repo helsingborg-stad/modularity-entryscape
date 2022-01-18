@@ -2,8 +2,6 @@
 
 namespace ModularityEntryscape\Module;
 
-
-
 /**
  * Class Entryscape
  * @package ModularityContact\Module
