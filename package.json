@@ -71,7 +71,9 @@
     "webpack-notifier": "^1.12.0",
     "webpack-shell-plugin": "^0.5.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@helsingborg-stad/styleguide": "github:helsingborg-stad/styleguide"
+  },
   "browser": {
     "child_process": false
   },

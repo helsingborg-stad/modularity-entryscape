@@ -1,1 +1,54 @@
-@import "./views/single"
+@use "~@helsingborg-stad/styleguide/source/sass/styleguide";
+
+.modularity-mod-entryscape .entryscape {
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+    @extend .c-typography__variant--h3;
+  }
+
+  .entryPagination {
+    padding: 0;
+  }
+  .entryPagination .pagination {
+    margin: 16px;
+    display: flex;
+    gap: 8px;
+  }
+  .entryPagination .page-item {
+    border: none; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  .entryList {
+    height: auto; 
+  }
+
+  .entryPagination .page-link {
+    @extend .c-button; 
+    @extend .c-button__filled; 
+    @extend .c-button__icon-size--md;
+    @extend .c-button--sm;
+    @extend .c-button--icon-only;
+  }
+  .entryPagination .page-link:not(:disabled) {
+    @extend .c-button__filled--primary; 
+  }
+
+  .esbFacets__limitButton {
+    @extend .c-button; 
+    @extend .c-button__filled; 
+    @extend .c-button--sm;
+  }
+
+  .entryPagination .page-text {
+    padding: 0 calc(var(--base, 8px)*2); 
+    margin: 0; 
+  }
+
+}

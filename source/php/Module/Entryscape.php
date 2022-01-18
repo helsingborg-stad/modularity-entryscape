@@ -2,6 +2,8 @@
 
 namespace ModularityEntryscape\Module;
 
+use ModularityEntryscape\Helper\CacheBust;
+
 /**
  * Class Entryscape
  * @package ModularityContact\Module
@@ -41,9 +43,6 @@ class Entryscape extends \Modularity\Module
             $data['entryscapeStore']
         );
 
-        //Add view path
-        $data['thisViewPath'] = $this->getDotBasedPath();
-
         //Translations
         $data['lang'] = (object) array(
         );
@@ -78,11 +77,6 @@ class Entryscape extends \Modularity\Module
         );
     }
 
-    private function getDotBasedPath(): string
-    {
-        return str_replace("/", ".", MODULARITYENTRYSCAPE_MODULE_VIEW_PATH);
-    }
-
     /**
      * Blade Template
      * @return string
@@ -98,7 +92,16 @@ class Entryscape extends \Modularity\Module
      */
     public function style()
     {
+        //Register custom css
+        wp_register_style(
+            'modularity_entryscape',
+            MODULARITYENTRYSCAPE_URL . '/dist/' . CacheBust::name('css/modularity-entryscape.css'),
+            null,
+            '1.0.0'
+        );
 
+        //Enqueue
+        wp_enqueue_style('modularity_entryscape');
     }
 
     /**

@@ -12,10 +12,6 @@
     
     @{{datasetResults}}
 
-    @paper()
-      @collection(['bordered' => true])
-        @{{datasetList}}
-      @endcollection
-    @endpaper
+    @{{datasetList}}
   </div>
 </div>

@@ -13,17 +13,6 @@ class App
 
         // Add view paths
         add_filter('Municipio/blade/view_paths', array($this, 'addViewPaths'), 1, 1);
-
-        //Register custom css
-        wp_register_style(
-            'modularity_entryscape',
-            MODULARITYENTRYSCAPE_URL . '/dist/' . CacheBust::name('css/modularity-entryscape.css'),
-            null,
-            '1.0.0'
-        );
-
-        //Enqueue
-        wp_enqueue_style('modularity_entryscape');
     }
 
     /**

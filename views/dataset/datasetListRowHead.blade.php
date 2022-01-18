@@ -1,9 +1,8 @@
   
-@collection__item([])
-  @typography(['element' => 'h4', 'variant' => 'h4'])
-    @{{text}}
-  @endtypography
-  @typography(['element' => 'p', 'variant' => 'p'])
-    @{{text content="${dcterms:description}"}}
-  @endtypography
-@endcollection__item
+<div class="u-margin__bottom--4">
+  @card([
+    'heading' => '@{{text}}',
+    'content' => '@{{text content="${dcterms:description}"}}'
+  ])
+  @endcard
+</div>
