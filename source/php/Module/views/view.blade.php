@@ -50,7 +50,7 @@
             },
             {
                 block: 'datasetList',
-                extends: 'list',
+                extends: 'searchList',
                 rdftype: 'dcat:Dataset',
                 facets: true,
                 namedclick: 'dataset',
