@@ -1,18 +1,14 @@
-require('dotenv').config();
-
 const path = require('path');
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const {getIfUtils, removeEmpty} = require('webpack-config-utils');
 const {ifProduction, ifNotProduction} = getIfUtils(process.env.NODE_ENV);
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     mode: ifProduction('production', 'development'),
@@ -21,13 +17,14 @@ module.exports = {
      * Add your entry files here
      */
     entry: {
-        'css/modularity-entryscape': './source/sass/modularity-entryscape.scss',
+        'css/modularity-entryscape':               './source/sass/modularity-entryscape.scss',
     },
+    
     /**
      * Output settings
      */
     output: {
-        filename: ifProduction('[name].[contenthash].min.js', '[name].[contenthash].min.js'),
+        filename: ifProduction('[name].min.js', '[name].min.js'),
         path: path.resolve(__dirname, 'dist'),
     },
     /**
@@ -37,26 +34,6 @@ module.exports = {
     },
     module: {
         rules: [
-            /**
-             * Babel
-             */
-            {
-                test: /\.js?/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        // Babel config here
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: [
-                            '@babel/plugin-syntax-dynamic-import',
-                            '@babel/plugin-proposal-export-default-from',
-                            '@babel/plugin-proposal-class-properties'
-                        ],
-                    },
-                },
-            },
-
             /**
              * Styles
              */
@@ -74,7 +51,7 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins: [autoprefixer, require('postcss-object-fit-images')],
+                            // plugins: [autoprefixer, require('postcss-object-fit-images')],
                             sourceMap: true,
                         },
                     },
@@ -87,49 +64,9 @@ module.exports = {
                     'import-glob-loader'
                 ],
             },
-            /**
-             * Images
-             */
-            {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: ifProduction('[name].[ext]', '[name].[ext]'),
-                            outputPath: 'images/action_icons',
-                            publicPath: '../images/action_icons',
-                        },
-                    },
-                ],
-            },
-
         ],
     },
     plugins: removeEmpty([
-
-        /**
-         * BrowserSync
-         */
-        typeof process.env.BROWSER_SYNC_PROXY_URL !== 'undefined' ? new BrowserSyncPlugin(
-            // BrowserSync options
-            {
-                // browse to http://localhost:3000/ during development
-                host: 'localhost',
-                port: process.env.BROWSER_SYNC_PORT ? process.env.BROWSER_SYNC_PORT : 3000,
-                // proxy the Webpack Dev Server endpoint
-                // (which should be serving on http://localhost:3100/)
-                // through BrowserSync
-                proxy: process.env.BROWSER_SYNC_PROXY_URL
-            },
-            // plugin options
-            {
-                // prevent BrowserSync from reloading the page
-                // and let Webpack Dev Server take care of this
-                reload: false
-            }
-        ) : null,
-
         /**
          * Fix CSS entry chunks generating js file
          */
@@ -139,12 +76,11 @@ module.exports = {
          * Clean dist folder
          */
         new CleanWebpackPlugin(),
-
         /**
          * Output CSS files
          */
         new MiniCssExtractPlugin({
-            filename: ifProduction('[name].[contenthash].min.css', '[name][contenthash].min.css')
+            filename: ifProduction('[name].min.css', '[name].min.css')
         }),
 
         /**
@@ -175,6 +111,7 @@ module.exports = {
                         file.name = pathParts[0].concat('.', pathParts[pathParts.length - 1]);
                     }
                 }
+                
                 return file;
             },
         }),
@@ -197,8 +134,6 @@ module.exports = {
                 preset: ['default', {discardComments: {removeAll: true}}],
             },
         })),
-
-        //new BundleAnalyzerPlugin()
 
     ]).filter(Boolean),
     devtool: ifProduction('none', 'eval-source-map'),

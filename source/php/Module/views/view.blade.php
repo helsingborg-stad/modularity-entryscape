@@ -16,7 +16,7 @@
         entrystore: '{{$entryscapeStore}}/store',
         context: '{{$entryscapeContextId}}',
         clicks: {
-            dataset: '{{$entryscapeClickUrl}}/'
+            dataset: '/{{$entryscapeClickUrl}}/'
         },
         blocks: [
             {

@@ -4,8 +4,8 @@
 
 .entryPagination .pagination {
   display: flex;
-  margin: calc($base * 2);
-  gap: $base;
+  margin: calc(#{$base} * 2);
+  gap: #{$base};
 }
 
 .entryPagination .page-item {
