@@ -1,5 +1,9 @@
 <div class="o-grid">
   <div class="o-grid-12">
-    <strong>Antal resultat:</strong> @{{resultsize}}
+        @typography(['variant' => 'meta', 'element' => 'span'])
+        {{$lang->numberOfResults}}:
+        @{{resultsize}}
+        @endtypography
+    </div>
   </div>
 </div>
