@@ -4,9 +4,6 @@
   /** Settings **/
   $base: var(--base, 8px) !default;
 
-  /** Tools **/
-  @import 'element/no-parens';
-
   /** Partials **/ 
   @import 'element/headings';
   @import 'element/pagination';
