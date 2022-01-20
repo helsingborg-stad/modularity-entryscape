@@ -1,0 +1,9 @@
+
+
+.selectize-input {
+  padding: 0;
+
+  @extend .c-field;
+  @extend .c-field--md;
+  @extend .c-field--radius-md;
+}

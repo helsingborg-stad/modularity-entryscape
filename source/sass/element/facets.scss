@@ -1,0 +1,70 @@
+.esbFacets__collection {
+  @extend .c-paper; 
+  margin-bottom: 36px;
+  padding: calc(#{$base} * 2);
+
+  ul {
+    display: flex; 
+    gap: calc(#{$base} * 1.5);
+    flex-wrap: wrap;
+  }
+}
+
+.esbFacets__facetHeader {
+  @extend .c-typography__variant--meta;
+  display: block;
+  border-bottom: unset; 
+  margin: 0 0 #{$base} 0;
+}
+
+.esbFacets__option {
+  @extend .c-tag;
+  @extend .c-tag--default;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  width: unset;
+  height: unset;
+  display: unset;
+  color: unset;
+  line-height: unset;
+  position: unset;
+  margin: unset !important;
+}
+
+.esbFacets--selected {
+  .esbFacets__occurence {
+    display: none;
+  }
+  .esbFacets__clear {
+    @extend .c-button; 
+    @extend .c-button__filled; 
+    @extend .c-button__icon-size--sm;
+    @extend .c-button--sm;
+    @extend .c-button--icon-only;
+    @extend .c-button__filled--default; 
+    margin-right: unset; 
+  }
+}
+
+.esbFacets__limit {
+  margin: calc(#{$base} * 2) 0 0 0; 
+}
+
+.esbFacets__limitButton {
+  @extend .c-button; 
+  @extend .c-button__filled; 
+  @extend .c-button__filled--default; 
+  @extend .c-button--sm;
+
+  display: block;
+  width: 100%;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: unset;
+    color: unset; 
+  }
+}
