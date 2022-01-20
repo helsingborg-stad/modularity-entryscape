@@ -1,11 +1,11 @@
-# modularity-contact-banner
-Contact Banner module for modularity
+# Entryscape for Modularity
+Display entryscape as a module. Compatible with Municipio 3.0 and Modularity. 
 
 ## Getting Started
 Get the latest version and follow the installation steps bellow.
 
 ### Dependencies
-Wordpress, Municipio and Modularity (version 2.11.0 or higher)
+Wordpress, Municipio and Modularity (version 3.0 or higher)
 
 ### Installing
 Get a development enviroment running by doing following:
@@ -34,13 +34,11 @@ Settings
 
 ## Releases
 
-https://github.com/helsingborg-stad/modularity-contact-banner/releases
+https://github.com/helsingborg-stad/modularity-entryscape/releases
 
 ## Authors
 
 * **Sebastian Thulin**
-* **Dan Nilsson**
-
 
 ## License
 
