@@ -33,6 +33,6 @@
 }
 
 .entryPagination .page-text {
-  padding: 0 calc(var(--base, 8px)*2); 
+  padding: 0 calc(#{$base} * 2); 
   margin: 0; 
 }

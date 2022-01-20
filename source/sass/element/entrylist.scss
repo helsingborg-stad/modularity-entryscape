@@ -1,3 +1,32 @@
 .entryList {
   height: auto; 
 }
+
+.esbRow {
+  box-shadow: unset;
+  margin-bottom: calc(#{$base} * 4);
+}
+
+.esbRowHead.esbDefaultExpandButton {
+  box-shadow: unset;
+  border: unset; 
+  display: block;
+  min-height: unset;
+  max-height: unset;
+  overflow: unset;
+
+  .esbRowMain {
+    padding: unset; 
+    width: unset;
+  }
+
+  .esbRowControl {
+    display: none; 
+  }
+}
+
+.c-card--entrylist .c-card__body p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

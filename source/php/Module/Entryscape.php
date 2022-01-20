@@ -85,7 +85,7 @@ class Entryscape extends \Modularity\Module
      */
     public function template(): string
     {
-        return "facet.blade.php";
+        return "view.blade.php";
     }
 
     /**

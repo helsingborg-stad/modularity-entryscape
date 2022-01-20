@@ -1,11 +1,10 @@
-<!-- Search -->
-
-<div data-entryscape="datasetFacetSearchLayout" 
-    data-entryscape-include-data-preview="false" 
-    data-entryscape-break="1024px">
-</div>
-
-<!-- <div data-entryscape="datasetView"></div> -->
+<!-- Mountpoint -->
+@if($entryscapeViewtype == 'single')
+    <div data-entryscape="datasetView"></div>
+@else 
+    <div data-entryscape="datasetFacetSearchLayout" data-entryscape-include-data-preview="false">
+    </div>
+@endif
 
 <!-- Scripts -->
 <script src="https://static.entryscape.com/blocks/0.20/ext/opendata-sv.js"></script>
@@ -71,7 +70,7 @@
                 define: 'datasetlist',
                 filterPredicates: 'dcterms:title,dcterms:description,dcterms:publisher,dcat:theme,dcat:keyword',
                 rowhead: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetListRowHead"); ?>',
-                rowexpand: '',
+                rowexpand: true,
                 listbody: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetListBody"); ?>',
                 layout: 'raw'
             }

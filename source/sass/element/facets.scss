@@ -24,6 +24,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 
+  word-spacing: unset;
   width: unset;
   height: unset;
   display: unset;
@@ -33,18 +34,24 @@
   margin: unset !important;
 }
 
-.esbFacets--selected {
-  .esbFacets__occurence {
-    display: none;
+.esbFacets__optionLink {
+  &:hover {
+    color: unset;
+    text-decoration: unset;
   }
+}
+
+.esbFacets--selected {
   .esbFacets__clear {
     @extend .c-button; 
-    @extend .c-button__filled; 
     @extend .c-button__icon-size--sm;
     @extend .c-button--sm;
     @extend .c-button--icon-only;
-    @extend .c-button__filled--default; 
-    margin-right: unset; 
+    margin: calc((#{$base} * .5) * -1) calc(#{$base} * -1) calc((#{$base} * .5) * -1) #{$base}; 
+
+    i {
+      margin-top: calc((#{$base} * .25) * -1) ;
+    }
   }
 }
 

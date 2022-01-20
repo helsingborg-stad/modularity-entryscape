@@ -3,9 +3,31 @@
 if (function_exists('acf_add_local_field_group')) {
     acf_add_local_field_group(array(
     'key' => 'group_61e6b10aa831e',
-    'title' => __('Entryscape Facet', 'modularity-entryscape'),
+    'title' => __('Entryscape', 'modularity-entryscape'),
     'fields' => array(
         0 => array(
+            'key' => 'field_61e9527db6ba8',
+            'label' => __('Viewtype', 'modularity-entryscape'),
+            'name' => 'entryscape_viewtype',
+            'type' => 'button_group',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'choices' => array(
+                'facet' => __('Facet view', 'modularity-entryscape'),
+                'single' => __('Single view', 'modularity-entryscape'),
+            ),
+            'allow_null' => 0,
+            'default_value' => 'facet',
+            'layout' => 'horizontal',
+            'return_format' => 'value',
+        ),
+        1 => array(
             'key' => 'field_61e6b13012e5e',
             'label' => __('Entryscape store url', 'modularity-entryscape'),
             'name' => 'entryscape_store',
@@ -21,7 +43,7 @@
             'default_value' => '',
             'placeholder' => '',
         ),
-        1 => array(
+        2 => array(
             'key' => 'field_61e6b19db04a7',
             'label' => __('Context ID', 'modularity-entryscape'),
             'name' => 'entryscape_context_id',
@@ -42,7 +64,7 @@
             'max' => '',
             'step' => '',
         ),
-        2 => array(
+        3 => array(
             'key' => 'field_61e6b1d0b04a8',
             'label' => __('Click URL', 'modularity-entryscape'),
             'name' => 'entryscape_click_url',

@@ -1,7 +1,29 @@
 [{
     "key": "group_61e6b10aa831e",
-    "title": "Entryscape Facet",
+    "title": "Entryscape",
     "fields": [
+        {
+            "key": "field_61e9527db6ba8",
+            "label": "Viewtype",
+            "name": "entryscape_viewtype",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "facet": "Facet view",
+                "single": "Single view"
+            },
+            "allow_null": 0,
+            "default_value": "facet",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
         {
             "key": "field_61e6b13012e5e",
             "label": "Entryscape store url",
