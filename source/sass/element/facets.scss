@@ -18,6 +18,8 @@
 }
 
 .esbFacets__option {
+  animation: expand 400ms ease-in-out;
+
   @extend .c-tag;
   @extend .c-tag--default;
 
@@ -73,5 +75,11 @@
   &:focus {
     background-color: unset;
     color: unset; 
+  }
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
   }
 }
