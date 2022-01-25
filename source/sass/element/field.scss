@@ -1,5 +1,8 @@
 .selectize-input {
-  border: 1px solid #ccc;
+
+  @extend .c-field;
+
+  /*border: 1px solid #ccc;
   padding: 6px 12px;
   display: inline-block;
   width: 100%;
@@ -13,7 +16,7 @@
   box-shadow: none;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 4px;*/ 
 }
 
 .selectize-input.items {

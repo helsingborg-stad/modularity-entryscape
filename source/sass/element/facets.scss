@@ -1,6 +1,6 @@
 .esbFacets__collection {
   @extend .c-paper; 
-  margin-bottom: 36px;
+  margin-bottom: calc(#{$base} * 4.5);
   padding: calc(#{$base} * 2);
 
   ul {
@@ -34,6 +34,11 @@
   line-height: unset;
   position: unset;
   margin: unset !important;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-primary-contrasting;
+  }
 }
 
 .esbFacets__optionLink {
@@ -49,10 +54,12 @@
     @extend .c-button__icon-size--sm;
     @extend .c-button--sm;
     @extend .c-button--icon-only;
-    margin: calc((#{$base} * .5) * -1) calc(#{$base} * -1) calc((#{$base} * .5) * -1) #{$base}; 
+    margin: calc((#{$base} * .5) * -1) calc(#{$base} * -1) calc((#{$base} * .5) * -1) #{$base};
+    color: $color-base; 
 
     i {
-      margin-top: calc((#{$base} * .25) * -1) ;
+      margin-top: 1px; 
+      font-size: 1.5em;
     }
   }
 }

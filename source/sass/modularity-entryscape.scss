@@ -64,6 +64,11 @@
 @import "~@helsingborg-stad/styleguide/source/sass/component/tag"; 
 @import "~@helsingborg-stad/styleguide/source/sass/component/fields"; 
 
+.entryscape {
+  font-family: unset;
+  -webkit-text-size-adjust: unset; 
+  -ms-text-size-adjust: unset; 
+}
 
 .modularity-mod-entryscape .entryscape {
 

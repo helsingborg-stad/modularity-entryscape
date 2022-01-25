@@ -1,8 +1,7 @@
 <div class="o-grid">
   <div class="o-grid-12">
         @typography(['variant' => 'meta', 'element' => 'span'])
-        {{$lang->numberOfResults}}:
-        @{{resultsize}}
+          <strong>@{{resultsize}}</strong> {{$lang->numberOfResults}}
         @endtypography
     </div>
   </div>

@@ -1,12 +1,13 @@
+/* Fix height issue with list */ 
 .entryList {
   height: auto; 
 }
 
+/* List item fixes */ 
 .esbRow.esbRowClickable {
   box-shadow: unset;
   margin-bottom: calc(#{$base} * 4);
   animation: expand 400ms ease-in-out;
-
 
   .esbRowHead.esbDefaultExpandButton {
     box-shadow: unset;
@@ -17,7 +18,7 @@
     overflow: unset;
 
     &:hover {
-      color: $color-body !important;
+      color: $color-body;
     }
 
     &:focus {
@@ -36,6 +37,7 @@
 
 }
 
+/* Fix for hover state in cards */ 
 .c-card--entrylist {
   &:hover {
       filter: $drop-shadow-3;
@@ -46,22 +48,14 @@
       .c-card__heading {
           text-decoration: underline;
       }
-
-      .c-card__image:before {
-          opacity: 0.08;
-      }
   }
 
   &:focus {
       background-color: $color-code-background-focus;
-      .c-card__image {
-          &:before {
-              opacity: 0.2;
-          }
-      }
   }
 }
 
+/* Text overflow fix */ 
 .c-card--entrylist .c-card__body p {
   white-space: nowrap;
   text-overflow: ellipsis;

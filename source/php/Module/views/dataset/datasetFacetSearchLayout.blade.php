@@ -6,9 +6,9 @@
 
   </div>
   <div class="o-grid-9@md">
-
-    @{{datasetMultiSearch exclude="format,org"}}
     
+    @{{datasetMultiSearch exclude="format,org"}}
+
     @{{datasetResults}}
 
     @{{datasetList}}
