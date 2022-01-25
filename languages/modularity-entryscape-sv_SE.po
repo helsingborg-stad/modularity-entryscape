@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Modularity entryscape\n"
+"POT-Creation-Date: 2022-01-25 16:19+0100\n"
+"PO-Revision-Date: 2022-01-25 16:19+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: modularity-entryscape.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: source/php/AcfFields/php/facet.php:6
+msgid "Entryscape"
+msgstr "Entyscape"
+
+#: source/php/AcfFields/php/facet.php:10
+msgid "Viewtype"
+msgstr "Typ av vy"
+
+#: source/php/AcfFields/php/facet.php:22
+msgid "Facet view"
+msgstr "Arkiv"
+
+#: source/php/AcfFields/php/facet.php:23
+msgid "Single view"
+msgstr "Singel"
+
+#: source/php/AcfFields/php/facet.php:32
+msgid "Entryscape store url"
+msgstr "Adress till entryscape"
+
+#: source/php/AcfFields/php/facet.php:35
+msgid ""
+"Add an url to your entryscape installation https://subdomain.domain.se. "
+"Leave out the folder part from configuration."
+msgstr ""
+"Lägg till en webbadress till din entryscapeinstallation (t.ex https://"
+"subdomain.domain.se). Utelämna eventuella mappstrukturer."
+
+#: source/php/AcfFields/php/facet.php:48
+msgid "Context ID"
+msgstr "Kontext ID (Context ID)"
+
+#: source/php/AcfFields/php/facet.php:69
+msgid "Click URL"
+msgstr "KlickURL"
+
+#: source/php/AcfFields/php/facet.php:72
+msgid "Select a target page where you have your single-view module attached."
+msgstr "Välj en sida där modulen entryscape finns i singel-vy läge. "
+
+#: source/php/Module/Entryscape.php:18
+msgid "Entryscape Facet"
+msgstr "Entryscape"
+
+#: source/php/Module/Entryscape.php:19
+msgid "Entryscape Facets"
+msgstr "Entryscape"
+
+#: source/php/Module/Entryscape.php:20
+msgid "Entryscape view for facetting."
+msgstr "Entryscape vy för filtrering (facettering) & singelvy. "
+
+#: source/php/Module/Entryscape.php:48
+msgid "results returned on your query."
+msgstr "resultat på din filtrering."
+
+#: source/php/Module/Entryscape.php:49
+msgid "No dataset is matching your search query."
+msgstr "Inga datamängder matchade din sökfråga. Vänligen försök igen."
+
+#: source/php/Module/Entryscape.php:50
+msgid "items in directory."
+msgstr "stycken datamängder från katalogen."
+
+#: source/php/Module/Entryscape.php:51
+msgid "Displaying all"
+msgstr "Visar"
+
+#. Plugin Name of the plugin/theme
+msgid "Modularity entryscape"
+msgstr "Modularity entryscape"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/helsingborg-stad/modularity-entryscape"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Display entryscape on your page"
+msgstr "Visar entryscape blocks."
+
+#. Author of the plugin/theme
+msgid "Sebastian Thulin"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/sebastianthulin"
+msgstr ""
+
+#~ msgid "Add new %s"
+#~ msgstr "Lägg till ny %s"
