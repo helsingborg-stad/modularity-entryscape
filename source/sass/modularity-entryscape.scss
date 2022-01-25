@@ -1,70 +1,74 @@
 /** Settings **/
 
-@use "~@helsingborg-stad/styleguide/source/sass/styleguide";
+//@use "~@helsingborg-stad/styleguide/source/sass/styleguide";
 
-/*
-
-@use "~@helsingborg-stad/styleguide/source/sass/setting/var_default";
-@use "~@helsingborg-stad/styleguide/source/sass/setting/var_fonts";
-@use "~@helsingborg-stad/styleguide/source/sass/setting/var_colors";
-@use "~@helsingborg-stad/styleguide/source/sass/setting/var_border-radius";
-@use "~@helsingborg-stad/styleguide/source/sass/setting/var_properties";
+@import "~@helsingborg-stad/styleguide/source/sass/setting/variables";
 
 // ***************************************************************
 // *** Functions
 // ***************************************************************
-@use "~@helsingborg-stad/styleguide/source/sass/function/strip-unit";
-@use "~@helsingborg-stad/styleguide/source/sass/function/em";
-@use "~@helsingborg-stad/styleguide/source/sass/function/rem";
-@use "~@helsingborg-stad/styleguide/source/sass/function/px";
-@use "~@helsingborg-stad/styleguide/source/sass/function/breakpoint-suffix";
-@use "~@helsingborg-stad/styleguide/source/sass/function/next-breakpoint";
-@use "~@helsingborg-stad/styleguide/source/sass/function/get-color";
-@use "~@helsingborg-stad/styleguide/source/sass/function/remove-list-item";
-@use "~@helsingborg-stad/styleguide/source/sass/function/validate-breakpoint-list";
-@use "~@helsingborg-stad/styleguide/source/sass/function/mix-color-style-functions";
-@use "~@helsingborg-stad/styleguide/source/sass/function/legacy-direction";
-@use "~@helsingborg-stad/styleguide/source/sass/function/is-direction";
-@use "~@helsingborg-stad/styleguide/source/sass/function/append-important";
-@use "~@helsingborg-stad/styleguide/source/sass/function/heading";
-@use "~@helsingborg-stad/styleguide/source/sass/function/string-replace";
+@import "~@helsingborg-stad/styleguide/source/sass/function/strip-unit";
+@import "~@helsingborg-stad/styleguide/source/sass/function/em";
+@import "~@helsingborg-stad/styleguide/source/sass/function/rem";
+@import "~@helsingborg-stad/styleguide/source/sass/function/px";
+@import "~@helsingborg-stad/styleguide/source/sass/function/breakpoint-suffix";
+@import "~@helsingborg-stad/styleguide/source/sass/function/next-breakpoint";
+@import "~@helsingborg-stad/styleguide/source/sass/function/get-color";
+@import "~@helsingborg-stad/styleguide/source/sass/function/remove-list-item";
+@import "~@helsingborg-stad/styleguide/source/sass/function/validate-breakpoint-list";
+@import "~@helsingborg-stad/styleguide/source/sass/function/mix-color-style-functions";
+@import "~@helsingborg-stad/styleguide/source/sass/function/legacy-direction";
+@import "~@helsingborg-stad/styleguide/source/sass/function/is-direction";
+@import "~@helsingborg-stad/styleguide/source/sass/function/append-important";
+@import "~@helsingborg-stad/styleguide/source/sass/function/heading";
+@import "~@helsingborg-stad/styleguide/source/sass/function/string-replace";
 
 // ***************************************************************
 // *** Mixins
 // ***************************************************************
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/mq";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/responsive-styles";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/psuedo";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/ratio";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/cover";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/center";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/size";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/shadow";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/button";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/list";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/paper";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/gradient";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/arrow";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/build-utility";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/animations/slide";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/animations/scale-up";
-@use "~@helsingborg-stad/styleguide/source/sass/mixin/animations/fade-in";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/mq";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/responsive-styles";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/psuedo";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/ratio";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/cover";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/center";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/size";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/shadow";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/button";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/list";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/paper";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/gradient";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/arrow";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/build-utility";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/animations/slide";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/animations/scale-up";
+@import "~@helsingborg-stad/styleguide/source/sass/mixin/animations/fade-in";
+
+// ***************************************************************
+// *** Utilities
+// ***************************************************************
+@import "~@helsingborg-stad/styleguide/source/sass/utility/display";
+
+// ***************************************************************
+// *** Elements
+// ***************************************************************
+@import "~@helsingborg-stad/styleguide/source/sass/element/headings";
 
 // ***************************************************************
 // *** Components
 // ***************************************************************
+@import "~@helsingborg-stad/styleguide/source/sass/component/card";
+@import "~@helsingborg-stad/styleguide/source/sass/component/paper";
+@import "~@helsingborg-stad/styleguide/source/sass/component/typography";
+@import "~@helsingborg-stad/styleguide/source/sass/component/button"; 
+@import "~@helsingborg-stad/styleguide/source/sass/component/tag"; 
+@import "~@helsingborg-stad/styleguide/source/sass/component/fields"; 
 
-@use "~@helsingborg-stad/styleguide/source/sass/component/card";
-@use "~@helsingborg-stad/styleguide/source/sass/component/paper";
-@use "~@helsingborg-stad/styleguide/source/sass/component/typhography";
-@use "~@helsingborg-stad/styleguide/source/sass/component/button";
-*/ 
 
 .modularity-mod-entryscape .entryscape {
 
   $base: var(--base, 8px); 
 
-  /** Partials **/ 
   @import 'element/headings';
   @import 'element/pagination';
   @import 'element/facets';
