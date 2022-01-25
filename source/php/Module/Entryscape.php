@@ -47,6 +47,8 @@ class Entryscape extends \Modularity\Module
         $data['lang'] = (object) array(
             'numberOfResults' => __("results returned on your query.", 'modularity-entryscape'),
             'noResults' => __("No dataset is matching your search query.", 'modularity-entryscape'),
+            'numberOfItemsInDirectory' => __("items in directory.", 'modularity-entryscape'),
+            'displaying' => __("Displaying all", 'modularity-entryscape')
         );
 
         return $data;

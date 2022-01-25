@@ -30,7 +30,7 @@
                 block: 'distributionList',
                 extends: 'template',
                 relation: 'dcat:distribution',
-                template: '<?php echo modularity_entryscape_render_blade_view("dataset.collection"); ?>',
+                template: '<?php echo modularity_entryscape_render_blade_view("dataset.distributionList"); ?>',
             },
             {
                 block: 'datasetFacetSearchLayout',
@@ -45,8 +45,8 @@
                 extends: 'results',
                 use: 'datasetlist',
                 live: 'polite',
-                templateFilter: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetResults", ['lang' => $lang]); ?>',
-                templateNoFilter: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetResults", ['lang' => $lang]); ?>',
+                templateFilter: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetResults", ['lang' => $lang, 'hasFilter' => true]); ?>',
+                templateNoFilter: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetResults", ['lang' => $lang, 'hasFilter' => false]); ?>',
             },
             {
                 block: 'datasetList',
