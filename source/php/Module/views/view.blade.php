@@ -26,12 +26,12 @@
                 filterPredicates:'dcterms:title,dcterms:description',
                 htemplate: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetView", ['lang' => $lang]); ?>',
             },
-            {
+            /*{
                 block: 'distributionList',
                 extends: 'template',
                 relation: 'dcat:distribution',
                 template: '<?php echo modularity_entryscape_render_blade_view("dataset.distributionList"); ?>',
-            },
+            },*/ 
             {
                 block: 'datasetFacetSearchLayout',
                 extends: 'template',
