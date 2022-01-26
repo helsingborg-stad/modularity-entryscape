@@ -1,14 +1,18 @@
 .selectize-control.multi {
+  .selectize-input.items,
+  .selectize-input.has-items {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: #{$base};
 
-  .selectize-input.items {
     appearance: none;
 
     width: 100%;
     margin: 0;
     outline: 0;
 
-    height: map-get($spacers, "6");
-    padding: map-get($spacers, "2");
+    min-height: map-get($spacers, "6");
+    padding: 11px map-get($spacers, "2");
 
     font-size: calc(#{$base}*2);
     line-height: calc(#{$base}*2); 
@@ -28,6 +32,11 @@
     border-bottom: 2px solid $color-in-action;
     box-shadow: unset;
   } 
+
+  input[role="search"] {
+    height: calc(#{$base}*3);  
+    line-height: calc(#{$base}*3);
+  }
 }
 
 .selectize-input.items {
@@ -39,15 +48,8 @@
   @extend .c-field--radius-md;
 }
 
-.selectize-control.multi .selectize-input.has-items {
-
-  padding-left: 9px;
-    padding-right: 9px;
-  padding: 5px 12px 2px;
-}
-
 .selectize-control.multi .selectize-input > button.item {
-  padding: unset !important;
+  padding: calc(var(--base, 8px) * 0.5) calc(var(--base, 8px)) !important;
 }
 
 //taggar
