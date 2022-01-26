@@ -1,0 +1,21 @@
+.entryscapeLead {
+  @extend .lead; 
+}
+
+/* rdForms */ 
+
+.rdforms {
+
+  .rdformsLabel {
+    font-weight: bold;
+  } 
+
+  .rdformsRow {
+    padding: calc(#{$base} * 1) 0;
+    margin-bottom: 0;
+
+    &.rdformsTopLevel {
+      width: 100%;
+    }
+  }
+}

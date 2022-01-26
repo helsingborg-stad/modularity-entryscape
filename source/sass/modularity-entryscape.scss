@@ -65,6 +65,10 @@
 @import "~@helsingborg-stad/styleguide/source/sass/component/fields"; 
 @import "~@helsingborg-stad/styleguide/source/sass/component/collection"; 
 
+// ***************************************************************
+// *** Objects
+// ***************************************************************
+@import "~@helsingborg-stad/styleguide/source/sass/object/lead"; 
 
 
 .modularity-mod-entryscape .entryscape {
@@ -75,9 +79,11 @@
 
   $base: var(--base, 8px); 
 
+  @import 'element/single';
   @import 'element/headings';
   @import 'element/pagination';
   @import 'element/facets';
   @import 'element/entrylist';
   @import 'element/field';
+  @import 'element/field-dropdown';
 }

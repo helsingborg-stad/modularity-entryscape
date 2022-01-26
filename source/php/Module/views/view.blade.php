@@ -24,7 +24,7 @@
                 extends: 'template',
                 clickExpand: false,
                 filterPredicates:'dcterms:title,dcterms:description',
-                htemplate: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetView"); ?>',
+                htemplate: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetView", ['lang' => $lang]); ?>',
             },
             {
                 block: 'distributionList',

@@ -48,7 +48,8 @@ class Entryscape extends \Modularity\Module
             'numberOfResults' => __("results returned on your query.", 'modularity-entryscape'),
             'noResults' => __("No dataset is matching your search query.", 'modularity-entryscape'),
             'numberOfItemsInDirectory' => __("items in directory.", 'modularity-entryscape'),
-            'displaying' => __("Displaying all", 'modularity-entryscape')
+            'displaying' => __("Displaying all", 'modularity-entryscape'),
+            'metadataHeader' => __("Dataset details", 'modularity-entryscape'),
         );
 
         return $data;
