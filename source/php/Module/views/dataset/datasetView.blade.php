@@ -1,7 +1,13 @@
+<style>
+.c-article.c-article--readable-width {
+  display: none; 
+}
+</style>
+
 
 <div class="o-grid">
   <div class="o-grid-6@md">
-    <article id="article" class="c-article c-article--readable-width s-article u-clearfix">
+    <article id="article" class="c-article s-article u-clearfix">
      
      @typography([
           "variant" => "h1",
