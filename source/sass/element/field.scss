@@ -53,7 +53,8 @@
 }
 
 //taggar
-.item.esbItemFacet {
+.item.esbItemFacet,
+.item.esbItemTerm {
   animation: expand 400ms ease-in-out;
 
   @extend .c-tag;
