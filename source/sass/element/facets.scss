@@ -76,12 +76,18 @@
 
   display: block;
   width: 100%;
+  box-shadow: unset;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: unset;
-    color: unset; 
+    @extend .c-button; 
+    @extend .c-button__filled; 
+    @extend .c-button__filled--default; 
+    @extend .c-button--sm;
+    display: block;
+    width: 100%;
+    box-shadow: unset;
   }
 }
 
@@ -89,4 +95,12 @@
   from {
     opacity: 0;
   }
+}
+
+.entryscape .btn-secondary:not(:disabled):not(.disabled):active, 
+.entryscape .btn-secondary:not(:disabled):not(.disabled).active, 
+.entryscape .show > .btn-secondary.dropdown-toggle {
+  color: unset;
+  background-color: unset;
+  border-color: unset;
 }

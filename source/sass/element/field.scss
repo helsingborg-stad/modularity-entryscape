@@ -1,3 +1,4 @@
+/* Field */ 
 .selectize-control.multi {
   .selectize-input.items,
   .selectize-input.has-items {
@@ -18,6 +19,7 @@
     line-height: calc(#{$base}*2); 
 
     border: 1px solid $color-form-fields;
+    border-bottom: 2px solid trasparent;
     background: $color-white;
     background-size: calc(#{$base}*2);
 
@@ -39,20 +41,7 @@
   }
 }
 
-.selectize-input.items {
-  padding: 0;
-  min-height: calc(#{$base} * 4);
-
-  @extend .c-field;
-  @extend .c-field--md;
-  @extend .c-field--radius-md;
-}
-
-.selectize-control.multi .selectize-input > button.item {
-  padding: calc(var(--base, 8px) * 0.5) calc(var(--base, 8px)) !important;
-}
-
-//taggar
+/* Contained tags */ 
 .item.esbItemFacet,
 .item.esbItemTerm {
   animation: expand 400ms ease-in-out;
@@ -77,6 +66,3 @@
     color: $color-primary-contrasting;
   }
 }
-
-//Sökruta
-//<input type="text" autocomplete="off" tabindex="" role="search" aria-label="Sök datamängder" style="width: 102.281px; opacity: 1; position: relative; left: 0px; padding: 0px; height: auto;">
