@@ -1,3 +1,64 @@
+/* Autosuggest dropdown */ 
+
+.selectize-dropdown {
+  @extend .c-paper;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  filter: unset;
+  border: 1px solid #eee;
+  box-shadow: none;
+  margin-top: -2px;
+  position: initial;
+  padding-bottom: calc(#{$base}*1.5);
+
+  .create {
+    @extend .c-button; 
+    @extend .c-button--sm;
+    @extend .c-button__basic; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    height: 46px;
+    filter: unset;
+    background-color: #fff;
+    border-left: 2px solid #eee; 
+    padding: 0 calc(#{$base}*1.5);
+    margin-top: 1px;
+
+    &:not(:disabled){
+      padding-left: calc(#{$base}*2);
+      padding-right: calc(#{$base}*2);
+    }
+  }
+
+  .optgroup {
+    @extend .c-collection; 
+  }
+
+  .optgroup-header {
+    @extend .c-typography__variant--meta;
+    padding: calc(#{$base}*.5) calc(#{$base}*2); 
+  }
+
+  *[data-selectable] {
+    @extend .c-collection__item; 
+    border: unset; 
+    padding: calc(#{$base}*.5) calc(#{$base}*2); 
+  }
+
+  *[data-selectable].active {
+    @extend .c-collection__item; 
+    border: unset; 
+  }
+
+  .selectize-dropdown-content {
+    padding: unset;
+    min-height: calc(#{$base}*7);
+  }
+
+}
+
 /* Field */ 
 .selectize-control.multi {
   .selectize-input.items,
@@ -26,6 +87,11 @@
     border-radius: $c-field-border-radius; 
 
     transition: color .1s ease, border-color .1s ease;
+  }
+
+  .selectize-input.dropdown-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .selectize-input:focus,
