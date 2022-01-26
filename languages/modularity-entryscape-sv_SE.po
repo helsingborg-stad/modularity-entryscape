@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Modularity entryscape\n"
 "POT-Creation-Date: 2022-01-26 16:19+0100\n"
-"PO-Revision-Date: 2022-01-26 16:20+0100\n"
+"PO-Revision-Date: 2022-01-26 16:47+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -82,7 +82,7 @@ msgstr "Inga datamängder matchade din sökfråga. Vänligen försök igen."
 
 #: source/php/Module/Entryscape.php:50
 msgid "items in directory."
-msgstr "stycken datamängder från katalogen."
+msgstr "datamängder från katalogen."
 
 #: source/php/Module/Entryscape.php:51
 msgid "Displaying all"
