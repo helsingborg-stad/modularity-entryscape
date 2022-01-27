@@ -50,6 +50,7 @@ class Entryscape extends \Modularity\Module
             'numberOfItemsInDirectory' => __("items in directory.", 'modularity-entryscape'),
             'displaying' => __("Displaying all", 'modularity-entryscape'),
             'metadataHeader' => __("Dataset details", 'modularity-entryscape'),
+            'dataPreview' => __("Data preview", 'modularity-entryscape'),
         );
 
         return $data;

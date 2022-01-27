@@ -1,0 +1,17 @@
+.s-distributionlist {
+
+  .entryListRow {
+    box-shadow: unset; 
+    margin-bottom: calc(#{$base} * 2);
+    @extend .c-paper;
+  }
+
+  .btn.btn-sm.btn-primary {
+    @extend .c-button; 
+    @extend .c-button__filled; 
+    @extend .c-button__icon-size--md;
+    @extend .c-button--sm;
+    @extend .c-button__filled--default; 
+  }
+
+}

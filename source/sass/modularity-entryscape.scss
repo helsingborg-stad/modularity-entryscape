@@ -48,6 +48,7 @@
 // *** Utilities
 // ***************************************************************
 @import "~@helsingborg-stad/styleguide/source/sass/utility/display";
+@import "~@helsingborg-stad/styleguide/source/sass/utility/shadow";
 
 // ***************************************************************
 // *** Elements
@@ -70,6 +71,7 @@
 // ***************************************************************
 @import "~@helsingborg-stad/styleguide/source/sass/object/lead"; 
 
+/* In module */ 
 .modularity-mod-entryscape .entryscape {
   font-family: unset;
   -webkit-text-size-adjust: unset; 
@@ -84,4 +86,10 @@
   @import 'element/entrylist';
   @import 'element/field';
   @import 'element/field-dropdown';
+  @import 'element/sources';
+}
+
+/* Outside module */
+.entryscape { 
+  @import 'element/popovers';
 }
