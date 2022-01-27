@@ -2,8 +2,7 @@
 @if($entryscapeViewtype == 'single')
     <div data-entryscape="datasetView"></div>
 @else 
-    <div data-entryscape="datasetFacetSearchLayout" data-entryscape-include-data-preview="false">
-    </div>
+    <div data-entryscape="datasetFacetSearchLayout" data-entryscape-include-data-preview="false"></div>
 @endif
 
 <!-- Scripts -->

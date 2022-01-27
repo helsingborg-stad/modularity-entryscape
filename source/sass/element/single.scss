@@ -27,7 +27,7 @@ h1 {
       padding-left: calc(#{$base} * 2);
       .rdformsField {
         margin: 0; 
-        padding: calc(#{$base} * .25) calc(#{$base} * 1); 
+        padding: calc(#{$base} * .25) 0; 
       }
     }
   }

@@ -46,9 +46,8 @@
   </div>
 
   <div class="o-grid-12">
-    @card(['heading' => 'Test'])
+    @card([])
       <div class="c-card__body">
-
         @typography([
           "variant" => "h3",
           "element" => "h2",

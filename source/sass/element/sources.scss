@@ -4,6 +4,17 @@
     gap: calc(#{$base} * 2);
   }
 
+  .rdformsGroup {
+    margin: unset !important; 
+    padding: unset !important;
+
+    .rdformsFields,
+    .rdformsRow {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
   .esbRowAlignOther:empty {
     display: none;
   }
@@ -44,10 +55,6 @@
       padding: unset;
     }
 
-    .esbRowAlign {
-
-    }
-
     .esbRowControl {
       width: unset;
     }
@@ -73,6 +80,9 @@
     @extend .c-button__icon-size--md;
     @extend .c-button--sm;
     @extend .c-button__filled--secondary; 
+    margin-left: unset !important; 
+    letter-spacing: unset !important;
+    font-size: 14px; 
   }
 
   .btn.btn-sm.btn-link {
