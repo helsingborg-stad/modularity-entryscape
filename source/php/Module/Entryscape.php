@@ -51,6 +51,10 @@ class Entryscape extends \Modularity\Module
             'displaying' => __("Displaying all", 'modularity-entryscape'),
             'metadataHeader' => __("Dataset details", 'modularity-entryscape'),
             'dataPreview' => __("Data preview", 'modularity-entryscape'),
+            'showMore' => __("Show more", 'modularity-entryscape'),
+            'showLess' => __("Show less", 'modularity-entryscape'),
+            'moreInfo' => __("More information", 'modularity-entryscape'),
+            'lessInfo' => __("Less information", 'modularity-entryscape'),
         );
 
         return $data;

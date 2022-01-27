@@ -26,12 +26,6 @@
                 filterPredicates:'dcterms:title,dcterms:description',
                 htemplate: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetView", ['lang' => $lang]); ?>',
             },
-            /*{
-                block: 'distributionList',
-                extends: 'template',
-                relation: 'dcat:distribution',
-                template: '<?php echo modularity_entryscape_render_blade_view("dataset.distributionList"); ?>',
-            },*/ 
             {
                 block: 'datasetFacetSearchLayout',
                 extends: 'template',
@@ -64,8 +58,8 @@
                 includeIndicators: false,
                 dependencyproperties: 'dcterms:publisher',
                 listplaceholder: '<?php echo modularity_entryscape_render_blade_view("dataset.notice", ["message" => $lang->noResults]); ?>',
-                expandTooltip: 'Mer information',
-                unexpandTooltip: 'Mindre information',
+                expandTooltip: '{{$lang->moreInfo}}',
+                unexpandTooltip: '{{$lang->lessInfo}}',
                 clickExpand: false,
                 define: 'datasetlist',
                 filterPredicates: 'dcterms:title,dcterms:description,dcterms:publisher,dcat:theme,dcat:keyword',
@@ -73,6 +67,12 @@
                 rowexpand: true,
                 listbody: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetListBody"); ?>',
                 layout: 'raw'
+            },
+            {
+                block: 'facets_translated',
+                extends: 'facets',
+                showmore: '{{$lang->showMore}}',
+                showless: '{{$lang->showLess}}',
             }
         ]
     }]);

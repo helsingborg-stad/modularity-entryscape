@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Modularity entryscape\n"
-"POT-Creation-Date: 2022-01-27 09:55+0100\n"
-"PO-Revision-Date: 2022-01-27 09:55+0100\n"
+"POT-Creation-Date: 2022-01-27 13:37+0100\n"
+"PO-Revision-Date: 2022-01-27 13:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -95,6 +95,22 @@ msgstr "Detaljer"
 #: source/php/Module/Entryscape.php:53
 msgid "Data preview"
 msgstr "Förhandsgranskning av data"
+
+#: source/php/Module/Entryscape.php:54
+msgid "Show more"
+msgstr "Visa mer"
+
+#: source/php/Module/Entryscape.php:55
+msgid "Show less"
+msgstr "Visa mindre"
+
+#: source/php/Module/Entryscape.php:56
+msgid "More information"
+msgstr "Mer information"
+
+#: source/php/Module/Entryscape.php:57
+msgid "Less information"
+msgstr "Mindre information"
 
 #. Plugin Name of the plugin/theme
 msgid "Modularity entryscape"
