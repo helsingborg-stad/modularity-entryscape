@@ -55,11 +55,7 @@
         ])
           {{ $lang->dataPreview }}
         @endtypography
-
-        {Preview view}
-        
       </div>
     @endcard
   </div>
-
 </div>

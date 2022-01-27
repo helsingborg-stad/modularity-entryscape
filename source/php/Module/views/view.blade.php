@@ -5,6 +5,9 @@
     <div data-entryscape="datasetFacetSearchLayout" data-entryscape-include-data-preview="false"></div>
 @endif
 
+
+<?php include MODULARITYENTRYSCAPE_MODULE_PATH . 'js.php'; ?>
+
 <!-- Scripts -->
 <script src="https://static.entryscape.com/blocks/0.20/ext/opendata-sv.js"></script>
 
@@ -72,6 +75,11 @@
                 extends: 'facets',
                 showmore: '{{$lang->showMore}}',
                 showless: '{{$lang->showLess}}',
+            },
+            {
+                block: 'previewTable',
+                extends: 'viewMetadata',
+                template: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetPreview"); ?>'
             }
         ]
     }]);
