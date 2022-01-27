@@ -1,5 +1,43 @@
 .s-distributionlist {
 
+  .esbPadding {
+    padding: calc(#{$base} * 2);
+  }
+
+  .esbRowExpand {
+    padding: unset;
+    background-color: unset;
+  }
+
+  .esbRowHead  {
+    min-height: unset;
+    max-height: unset;
+    overflow: unset; 
+    gap: calc(#{$base} * 2);
+
+    .esbRowAlign,
+    .esbRowControl {
+      margin: unset;
+      padding: unset;
+    }
+
+    .esbRowAlign {
+
+    }
+
+    .esbRowControl {
+      width: unset;
+    }
+
+    .esbRowControl>button {
+      margin: unset;
+    }
+
+    .esbRowMain {
+      padding: unset;
+    }
+  }
+
   .entryListRow {
     box-shadow: unset; 
     margin-bottom: calc(#{$base} * 2);
@@ -11,6 +49,15 @@
     @extend .c-button__filled; 
     @extend .c-button__icon-size--md;
     @extend .c-button--sm;
+    @extend .c-button__filled--secondary; 
+  }
+
+  .btn.btn-sm.btn-link {
+    @extend .c-button; 
+    @extend .c-button__filled; 
+    @extend .c-button__icon-size--md;
+    @extend .c-button--sm;
+    @extend .c-button--icon-only;
     @extend .c-button__filled--default; 
   }
 
