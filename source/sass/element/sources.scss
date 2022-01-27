@@ -1,5 +1,23 @@
 .s-distributionlist {
 
+  .esbRowAlign {
+    gap: calc(#{$base} * 2);
+  }
+
+  .esbRowAlignOther {
+    min-width: unset !important;
+
+    .esbBadge {
+      padding: unset;
+      text-indent: -9999px;
+      overflow: hidden;
+      height: calc(#{$base} * 2);
+      width: calc(#{$base} * 2);
+      border-radius: 50%;
+      display: block;
+    }
+  }
+
   .esbPadding {
     padding: calc(#{$base} * 2);
   }
