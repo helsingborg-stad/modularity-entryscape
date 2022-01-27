@@ -2,6 +2,12 @@
   @extend .lead; 
 }
 
+h1 {
+  font-size: var(--h1-font-size,32px);
+  font-weight: var(--h1-font-weight,700);
+  line-height: var(--h1-line-height,1.25);
+}
+
 /* rdForms */ 
 .rdforms {
   .rdformsRow {

@@ -4,6 +4,10 @@
     gap: calc(#{$base} * 2);
   }
 
+  .esbRowAlignOther:empty {
+    display: none;
+  }
+
   .esbRowAlignOther {
     min-width: unset !important;
 
