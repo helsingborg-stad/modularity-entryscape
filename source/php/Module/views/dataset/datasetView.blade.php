@@ -44,7 +44,7 @@
       </div>
     @endcard
   </div>
-
+{{--- 
   <div class="o-grid-12">
     @card([])
       <div class="c-card__body">
@@ -59,3 +59,4 @@
     @endcard
   </div>
 </div>
+---}}

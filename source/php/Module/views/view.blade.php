@@ -5,9 +5,6 @@
     <div data-entryscape="datasetFacetSearchLayout" data-entryscape-include-data-preview="false"></div>
 @endif
 
-
-<?php include MODULARITYENTRYSCAPE_MODULE_PATH . 'js.php'; ?>
-
 <!-- Scripts -->
 <script src="https://static.entryscape.com/blocks/0.20/ext/opendata-sv.js"></script>
 
