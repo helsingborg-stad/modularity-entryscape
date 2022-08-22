@@ -63,7 +63,7 @@
                 define: 'datasetlist',
                 filterPredicates: 'dcterms:title,dcterms:description,dcterms:publisher,dcat:theme,dcat:keyword',
                 rowhead: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetListRowHead"); ?>',
-                rowexpand: true,
+                rowexpand: '',
                 listbody: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetListBody"); ?>',
                 layout: 'raw'
             },
