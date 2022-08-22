@@ -4,7 +4,7 @@
 }
 
 /* List item fixes */ 
-.esbRow.esbRowClickable {
+.esbRow.esbPadding {
   box-shadow: unset;
   margin-bottom: calc(#{$base} * 4);
   animation: expand 400ms ease-in-out;
