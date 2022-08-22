@@ -7,7 +7,7 @@ if (php_sapi_name() !== 'cli') {
 
 // Any command needed to run and build plugin assets when newly cheched out of repo.
 $buildCommands = [
-    'npm install --no-progress',
+    'npm ci --no-progress --no-audit',
     'npm run build',
 ];
 
@@ -18,7 +18,6 @@ $removables = [
     '.github',
     'build.php',
     'composer.json',
-    'gulpfile.js',
     'webpack.config.js',
     'node_modules',
     'package-lock.json',
@@ -56,7 +55,14 @@ if (isset($argv[1]) && $argv[1] === '--cleanup') {
  */
 function executeCommand($command)
 {
-    $proc = popen("$command 2>&1 ; echo Exit status : $?", 'r');
+    $fullCommand = '';
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        $fullCommand = "cmd /v:on /c \"$command 2>&1 & echo Exit status : !ErrorLevel!\"";
+    } else {
+        $fullCommand = "$command 2>&1 ; echo Exit status : $?";
+    }
+
+    $proc = popen($fullCommand, 'r');
 
     $liveOutput     = '';
     $completeOutput = '';
