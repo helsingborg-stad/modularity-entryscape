@@ -27,14 +27,11 @@ define('MODULARITYENTRYSCAPE_MODULE_PATH', MODULARITYENTRYSCAPE_PATH . 'source/p
 
 load_plugin_textdomain('modularity-entryscape', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
-require_once MODULARITYENTRYSCAPE_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
+// Autoload from plugin
+if (file_exists(MODULARITYENTRYSCAPE_PATH . 'vendor/autoload.php')) {
+    require_once MODULARITYENTRYSCAPE_PATH . 'vendor/autoload.php';
+}
 require_once MODULARITYENTRYSCAPE_PATH . 'Public.php';
-
-// Instantiate and register the autoloader
-$loader = new ModularityEntryscape\Vendor\Psr4ClassLoader();
-$loader->addPrefix('ModularityEntryscape', MODULARITYENTRYSCAPE_PATH);
-$loader->addPrefix('ModularityEntryscape', MODULARITYENTRYSCAPE_PATH . 'source/php/');
-$loader->register();
 
 // Acf auto import and export
 $acfExportManager = new \AcfExportManager\AcfExportManager();
