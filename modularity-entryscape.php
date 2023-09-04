@@ -34,13 +34,15 @@ if (file_exists(MODULARITYENTRYSCAPE_PATH . 'vendor/autoload.php')) {
 require_once MODULARITYENTRYSCAPE_PATH . 'Public.php';
 
 // Acf auto import and export
-$acfExportManager = new \AcfExportManager\AcfExportManager();
-$acfExportManager->setTextdomain('modularity-entryscape');
-$acfExportManager->setExportFolder(MODULARITYENTRYSCAPE_PATH . 'source/php/AcfFields/');
-$acfExportManager->autoExport(array(
-    'facet' => 'group_61e6b10aa831e',
-));
-$acfExportManager->import();
+add_action('acf/init', function () {
+    $acfExportManager = new \AcfExportManager\AcfExportManager();
+    $acfExportManager->setTextdomain('modularity-entryscape');
+    $acfExportManager->setExportFolder(MODULARITYENTRYSCAPE_PATH . 'source/php/AcfFields/');
+    $acfExportManager->autoExport(array(
+        'facet' => 'group_61e6b10aa831e',
+    ));
+    $acfExportManager->import();
+});
 
 // Modularity 3.0 ready - ViewPath for Component library
 add_filter('/Modularity/externalViewPath', function ($arr) {
