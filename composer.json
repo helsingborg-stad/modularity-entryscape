@@ -11,12 +11,6 @@
     ],
     "minimum-stability": "stable",
     "require": {},
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-entryscape.git"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "ModularityEntryscape\\": "source/php/"
