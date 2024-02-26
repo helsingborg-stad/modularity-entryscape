@@ -1,24 +1,17 @@
 <?php
 
 use ComponentLibrary\Init as ComponentLibraryInit;
-use HelsingborgStad\GlobalBladeService\GlobalBladeService;
 
 if (!function_exists('modularity_entryscape_render_blade_view')) {
     function modularity_entryscape_render_blade_view($view, $data = [], $compress = true)
     {
-        $bladeEngine = GlobalBladeService::getInstance([
-          MODULARITYENTRYSCAPE_VIEW_PATH,
-          MODULARITYENTRYSCAPE_MODULE_VIEW_PATH
-        ]);
+        $componentLibrary = new ComponentLibraryInit([]);
+        $bladeEngine = $componentLibrary->getEngine();
+        $viewPaths = [MODULARITYENTRYSCAPE_VIEW_PATH, MODULARITYENTRYSCAPE_MODULE_VIEW_PATH];
+        $data = array_merge($data, array('errorMessage' => false));
 
         try {
-            $markup = $bladeEngine->makeView(
-                $view,
-                array_merge(
-                    $data,
-                    array('errorMessage' => false)
-                )
-            )->render();
+            $markup = $bladeEngine->makeView($view, $data, [], $viewPaths)->render();
         } catch (\Throwable $e) {
             $markup .= '<pre style="border: 3px solid #f00; padding: 10px;">';
             $markup .= '<strong>' . $e->getMessage() . '</strong>';
