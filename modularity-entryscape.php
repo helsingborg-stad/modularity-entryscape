@@ -4,7 +4,7 @@
  * Plugin Name:       Modularity entryscape
  * Plugin URI:        https://github.com/helsingborg-stad/modularity-entryscape
  * Description:       Display entryscape on your page
- * Version: 4.0.1
+ * Version: 5.0.0
  * Author:            Sebastian Thulin
  * Author URI:        https://github.com/sebastianthulin
  * License:           MIT
