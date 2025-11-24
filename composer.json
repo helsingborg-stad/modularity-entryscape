@@ -9,12 +9,29 @@
             "email": "sebastian.thulin@helsingborg.se"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {},
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "vendor/{$vendor}/{$name}": [
+                "type:wordpress-muplugin",
+                "type:wordpress-theme",
+                "type:wordpress-plugin",
+                "type:acf-plugin"
+            ]
+        }
+    },
+    "require": {
+        "helsingborg-stad/municipio": "^6.0.0"
+    },
     "autoload": {
         "psr-4": {
             "ModularityEntryscape\\": "source/php/"
         }
     },
-    "version": "5.0.0"
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
 }
