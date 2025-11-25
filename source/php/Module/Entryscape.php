@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace ModularityEntryscape\Module;
 
-use ModularityEntryscape\Helper\CacheBust;
-
 /**
  * Class Entryscape
  * @package ModularityContact\Module
@@ -92,16 +90,7 @@ class Entryscape extends \Modularity\Module
      */
     public function style()
     {
-        //Register custom css
-        wp_register_style(
-            'modularity_entryscape',
-            MODULARITYENTRYSCAPE_URL . '/dist/' . CacheBust::name('css/modularity-entryscape.css'),
-            null,
-            '1.0.0',
-        );
-
-        //Enqueue
-        wp_enqueue_style('modularity_entryscape');
+        $this->wpEnqueue?->add('css/modularity-entryscape.css', [], '1.0.0');
     }
 
     /**
