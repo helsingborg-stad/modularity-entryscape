@@ -47,6 +47,7 @@ Thumbs.db
 dist/temp
 dist/.temp
 
+assets/
 # -------------------------
 # BEGIN Whitelisted Files
 # -------------------------
@@ -54,3 +55,4 @@ dist/.temp
 # track these files, if they exist
 !.gitignore
 !.editorconfig
+!.vscode/
