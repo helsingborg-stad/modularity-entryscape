@@ -40,5 +40,25 @@
     },
     "browser": {
         "child_process": false
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "transform": {
+            "^.+\\.(js|ts)$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "source/**/*.js",
+            "source/**/*.ts"
+        ],
+        "moduleFileExtensions": [
+            "js",
+            "ts"
+        ],
+        "testMatch": [
+            "**/*.test.(js|ts)"
+        ],
+        "transformIgnorePatterns": [
+            "node_modules/(?!(.*\\.mjs$))"
+        ]
     }
 }
