@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace ModularityEntryscape\Helper;
 
@@ -27,16 +28,20 @@ class CacheBust
      */
     public static function getRevManifest()
     {
-        $jsonPath = MODULARITYENTRYSCAPE_PATH . apply_filters(
-            'ModularityEntryscape/Helper/CacheBust/RevManifestPath',
-            'dist/manifest.json'
-        );
+        $jsonPath =
+            MODULARITYENTRYSCAPE_PATH
+            . apply_filters('ModularityEntryscape/Helper/CacheBust/RevManifestPath', 'dist/manifest.json');
 
         if (file_exists($jsonPath)) {
             return json_decode(file_get_contents($jsonPath), true);
         } elseif (WP_DEBUG) {
-            echo '<div style="color:red">Error: Assets not built. Go to ' . MODULARITYENTRYSCAPE_PATH . ' and run gulp. See ' . MODULARITYENTRYSCAPE_PATH . 'README.md for more info.</div>';
+            echo
+                '<div style="color:red">Error: Assets not built. Go to '
+                    . MODULARITYENTRYSCAPE_PATH
+                    . ' and run gulp. See '
+                    . MODULARITYENTRYSCAPE_PATH
+                    . 'README.md for more info.</div>'
+            ;
         }
     }
 }
-
