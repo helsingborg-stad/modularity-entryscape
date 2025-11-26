@@ -1,8 +1,7 @@
 <?php
+declare(strict_types=1);
 
 namespace ModularityEntryscape\Module;
-
-use ModularityEntryscape\Helper\CacheBust;
 
 /**
  * Class Entryscape
@@ -11,13 +10,13 @@ use ModularityEntryscape\Helper\CacheBust;
 class Entryscape extends \Modularity\Module
 {
     public $slug = 'entryscape';
-    public $supports = array();
+    public $supports = [];
 
     public function init()
     {
-        $this->nameSingular = __("Entryscape Facet", 'modularity-entryscape');
-        $this->namePlural = __("Entryscape Facets", 'modularity-entryscape');
-        $this->description = __("Entryscape view for facetting.", 'modularity-entryscape');
+        $this->nameSingular = __('Entryscape Facet', 'modularity-entryscape');
+        $this->namePlural = __('Entryscape Facets', 'modularity-entryscape');
+        $this->description = __('Entryscape view for facetting.', 'modularity-entryscape');
     }
 
     /**
@@ -26,36 +25,30 @@ class Entryscape extends \Modularity\Module
      */
     public function data(): array
     {
-        $data = array();
+        $data = [];
 
         //Append field config
-        $data = array_merge($data, (array) \Modularity\Helper\FormatObject::camelCase(
-            get_fields($this->ID)
-        ));
+        $data = array_merge($data, (array) \Modularity\Helper\FormatObject::camelCase(get_fields($this->ID)));
 
         //Get slug of clickurl
-        $data['entryscapeClickUrl'] = $this->getSlugFromUrl(
-            $data['entryscapeClickUrl']
-        );
+        $data['entryscapeClickUrl'] = $this->getSlugFromUrl($data['entryscapeClickUrl']);
 
         //Remove slashes
-        $data['entryscapeStore'] = $this->trimSlashes(
-            $data['entryscapeStore']
-        );
+        $data['entryscapeStore'] = $this->trimSlashes($data['entryscapeStore']);
 
         //Translations
-        $data['lang'] = (object) array(
-            'numberOfResults'           => __("results returned on your query.", 'modularity-entryscape'),
-            'noResults'                 => __("No dataset is matching your search query.", 'modularity-entryscape'),
-            'numberOfItemsInDirectory'  => __("items in directory.", 'modularity-entryscape'),
-            'displaying'                => __("Displaying all", 'modularity-entryscape'),
-            'metadataHeader'            => __("Dataset details", 'modularity-entryscape'),
-            'dataPreview'               => __("Data preview", 'modularity-entryscape'),
-            'showMore'                  => __("Show more", 'modularity-entryscape'),
-            'showLess'                  => __("Show less", 'modularity-entryscape'),
-            'moreInfo'                  => __("More information", 'modularity-entryscape'),
-            'lessInfo'                  => __("Less information", 'modularity-entryscape'),
-        );
+        $data['lang'] = (object) [
+            'numberOfResults' => __('results returned on your query.', 'modularity-entryscape'),
+            'noResults' => __('No dataset is matching your search query.', 'modularity-entryscape'),
+            'numberOfItemsInDirectory' => __('items in directory.', 'modularity-entryscape'),
+            'displaying' => __('Displaying all', 'modularity-entryscape'),
+            'metadataHeader' => __('Dataset details', 'modularity-entryscape'),
+            'dataPreview' => __('Data preview', 'modularity-entryscape'),
+            'showMore' => __('Show more', 'modularity-entryscape'),
+            'showLess' => __('Show less', 'modularity-entryscape'),
+            'moreInfo' => __('More information', 'modularity-entryscape'),
+            'lessInfo' => __('Less information', 'modularity-entryscape'),
+        ];
 
         return $data;
     }
@@ -68,9 +61,7 @@ class Entryscape extends \Modularity\Module
      */
     private function getSlugFromUrl($url): string
     {
-        return $this->trimSlashes(
-            parse_url($url, PHP_URL_PATH)
-        );
+        return $this->trimSlashes(parse_url($url, PHP_URL_PATH));
     }
 
     /**
@@ -81,10 +72,7 @@ class Entryscape extends \Modularity\Module
      */
     private function trimSlashes($string): string
     {
-        return ltrim(
-            rtrim($string, '/'),
-            '/'
-        );
+        return ltrim(rtrim($string, '/'), '/');
     }
 
     /**
@@ -93,7 +81,7 @@ class Entryscape extends \Modularity\Module
      */
     public function template(): string
     {
-        return "view.blade.php";
+        return 'view.blade.php';
     }
 
     /**
@@ -102,16 +90,7 @@ class Entryscape extends \Modularity\Module
      */
     public function style()
     {
-        //Register custom css
-        wp_register_style(
-            'modularity_entryscape',
-            MODULARITYENTRYSCAPE_URL . '/dist/' . CacheBust::name('css/modularity-entryscape.css'),
-            null,
-            '1.0.0'
-        );
-
-        //Enqueue
-        wp_enqueue_style('modularity_entryscape');
+        $this->wpEnqueue?->add('css/modularity-entryscape.css', [], '1.0.0');
     }
 
     /**

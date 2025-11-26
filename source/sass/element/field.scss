@@ -51,9 +51,9 @@
 .item.esbItemTerm {
   animation: expand 400ms ease-in-out;
 
-  @extend .c-tag;
-  @extend .c-tag--default;
-
+  @extend .c-tag !optional;
+  @extend .c-tag--default !optional;
+  
   white-space: nowrap;
   text-overflow: ellipsis;
 

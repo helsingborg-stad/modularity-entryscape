@@ -5,6 +5,11 @@
 # ignore node/grunt dependency directories
 node_modules/
 
+coverage/
+
+phpunit-log.xml
+phpunit-testdox.txt
+
 # ignore composer vendor directory
 /vendor
 
@@ -47,6 +52,7 @@ Thumbs.db
 dist/temp
 dist/.temp
 
+assets/
 # -------------------------
 # BEGIN Whitelisted Files
 # -------------------------
@@ -54,3 +60,4 @@ dist/.temp
 # track these files, if they exist
 !.gitignore
 !.editorconfig
+!.vscode/

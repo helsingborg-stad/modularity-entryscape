@@ -1,51 +1,51 @@
 /** Settings **/
-@import "~@helsingborg-stad/styleguide/source/sass/setting/variables";
+@import "@helsingborg-stad/styleguide/source/sass/setting/variables";
 
 // ***************************************************************
 // *** Functions
 // ***************************************************************
-@import "~@helsingborg-stad/styleguide/source/sass/function/strip-unit";
-@import "~@helsingborg-stad/styleguide/source/sass/function/em";
-@import "~@helsingborg-stad/styleguide/source/sass/function/breakpoint-suffix";
-@import "~@helsingborg-stad/styleguide/source/sass/function/next-breakpoint";
-@import "~@helsingborg-stad/styleguide/source/sass/function/validate-breakpoint-list";
+@import "@helsingborg-stad/styleguide/source/sass/function/strip-unit";
+@import "@helsingborg-stad/styleguide/source/sass/function/em";
+@import "@helsingborg-stad/styleguide/source/sass/function/breakpoint-suffix";
+@import "@helsingborg-stad/styleguide/source/sass/function/next-breakpoint";
+@import "@helsingborg-stad/styleguide/source/sass/function/validate-breakpoint-list";
 
 
 // ***************************************************************
 // *** Mixins
 // ***************************************************************
-@import "~@helsingborg-stad/styleguide/source/sass/mixin/mq";
-@import "~@helsingborg-stad/styleguide/source/sass/mixin/responsive-styles";
-@import "~@helsingborg-stad/styleguide/source/sass/mixin/cover";
-@import "~@helsingborg-stad/styleguide/source/sass/mixin/shadow";
-@import "~@helsingborg-stad/styleguide/source/sass/mixin/button";
-@import "~@helsingborg-stad/styleguide/source/sass/mixin/paper";
+@import "@helsingborg-stad/styleguide/source/sass/mixin/mq";
+@import "@helsingborg-stad/styleguide/source/sass/mixin/responsive-styles";
+@import "@helsingborg-stad/styleguide/source/sass/mixin/cover";
+@import "@helsingborg-stad/styleguide/source/sass/mixin/shadow";
+@import "@helsingborg-stad/styleguide/source/sass/mixin/button";
+@import "@helsingborg-stad/styleguide/source/sass/mixin/paper";
 
 // ***************************************************************
 // *** Utilities
 // ***************************************************************
-@import "~@helsingborg-stad/styleguide/source/sass/utility/display";
-@import "~@helsingborg-stad/styleguide/source/sass/utility/shadow";
+@import "@helsingborg-stad/styleguide/source/sass/utility/display";
+@import "@helsingborg-stad/styleguide/source/sass/utility/shadow";
 
 // ***************************************************************
 // *** Elements
 // ***************************************************************
-@import "~@helsingborg-stad/styleguide/source/sass/element/headings";
+@import "@helsingborg-stad/styleguide/source/sass/element/headings";
 
 // ***************************************************************
 // *** Components
 // ***************************************************************
-@import "~@helsingborg-stad/styleguide/source/sass/component/paper";
-@import "~@helsingborg-stad/styleguide/source/sass/component/typography";
-@import "~@helsingborg-stad/styleguide/source/sass/component/button"; 
-@import "~@helsingborg-stad/styleguide/source/sass/component/tag"; 
-@import "~@helsingborg-stad/styleguide/source/sass/component/fields"; 
-@import "~@helsingborg-stad/styleguide/source/sass/component/collection"; 
+@import "@helsingborg-stad/styleguide/source/sass/component/paper";
+@import "@helsingborg-stad/styleguide/source/sass/component/typography";
+@import "@helsingborg-stad/styleguide/source/sass/component/button"; 
+@import "@helsingborg-stad/styleguide/source/sass/component/tags"; 
+@import "@helsingborg-stad/styleguide/source/sass/component/field"; 
+@import "@helsingborg-stad/styleguide/source/sass/component/collection"; 
 
 // ***************************************************************
 // *** Objects
 // ***************************************************************
-@import "~@helsingborg-stad/styleguide/source/sass/object/lead"; 
+@import "@helsingborg-stad/styleguide/source/sass/object/lead"; 
 
 /* In module */ 
 .modularity-mod-entryscape .entryscape {
