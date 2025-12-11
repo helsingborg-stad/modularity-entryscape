@@ -5,59 +5,43 @@ if (php_sapi_name() !== 'cli') {
     exit(0);
 }
 
-/* Parameters: 
- --no-composer      Does not install vendors via composer
- --cleanup          Remove removeables
- --install-npm      Installs npm package as per package.json name field
- --release          Does not run composer install and does not remove .git
+/* Parameters:
+ --no-composer      Does not install vendors. Just create the autoloader.
+ --cleanup          Remove removeables.
 */
 
 // Any command needed to run and build plugin assets when newly cheched out of repo.
 $buildCommands = [];
 
 //Add composer build, if flag --no-composer is undefined.
-//Dump autloader. 
+//Dump autloader.
 //Only if composer.json exists.
 if (file_exists('composer.json')) {
     if (is_array($argv) && !in_array('--no-composer', $argv)) {
         $buildCommands[] = 'composer install --prefer-dist --no-progress --no-dev';
     }
-
     $buildCommands[] = 'composer dump-autoload';
 }
 
 //Run npm if package.json is found
 if (file_exists('package.json') && file_exists('package-lock.json')) {
-    if (is_array($argv) && !in_array('--install-npm', $argv)) {
-        $buildCommands[] = 'npm ci --no-progress --no-audit';
-        $buildCommands[] = 'npm run build';
-    } else {
-        $npmPackage = json_decode(file_get_contents('package.json'));
-        $buildCommands[] = "npm install $npmPackage->name";
-        $buildCommands[] = "rm -rf ./dist";
-        $buildCommands[] = "mv node_modules/$npmPackage->name/dist ./";
-    }
+	$buildCommands[] = 'npm ci --no-progress --no-audit';
+    $buildCommands[] = 'npm run build';
 } elseif (file_exists('package.json') && !file_exists('package-lock.json')) {
-    if (is_array($argv) && !in_array('--install-npm', $argv)) {
-        $buildCommands[] = 'npm install --no-progress --no-audit';
-        $buildCommands[] = 'npm run build';
-    } else {
-        $npmPackage = json_decode(file_get_contents('package.json'));
-        $buildCommands[] = "npm install $npmPackage->name";
-        $buildCommands[] = "rm -rf ./dist";
-        $buildCommands[] = "mv node_modules/$npmPackage->name/dist ./";
-    }
+	$buildCommands[] = 'npm install --no-progress --no-audit';
+    $buildCommands[] = 'npm run build';
 }
+
 
 // Files and directories not suitable for prod to be removed.
 $removables = [
+    '.git',
     '.gitignore',
     '.github',
     '.gitattributes',
     'build.php',
-    'build.js',
     '.npmrc',
-    //'composer.json',
+    'composer.json',
     'composer.lock',
     'env-example',
     'webpack.config.js',
@@ -65,30 +49,27 @@ $removables = [
     'package.json',
     'phpunit.xml.dist',
     'README.md',
+    'gulpfile.js',
     './node_modules/',
     './source/sass/',
     './source/js/',
     'LICENSE',
     'babel.config.js',
-    'yarn.lock',
-    '.devcontainer',
+    'yarn.lock'
 ];
 
-if (is_array($argv) && !in_array('--release', $argv)) {
-    $removables = array_merge($removables, ['.git']);
-}
 
 $dirName = basename(dirname(__FILE__));
 
 // Run all build commands.
-$output = '';
+$output   = '';
 $exitCode = 0;
 foreach ($buildCommands as $buildCommand) {
     print "---- Running build command '$buildCommand' for $dirName. ----\n";
     $timeStart = microtime(true);
-    $exitCode = executeCommand($buildCommand);
+    $exitCode  = executeCommand($buildCommand);
     $buildTime = round(microtime(true) - $timeStart);
-    print "---- Done build command '$buildCommand' for $dirName.  Build time: $buildTime seconds. ----\n\n";
+    print "---- Done build command '$buildCommand' for $dirName.  Build time: $buildTime seconds. ----\n";
     if ($exitCode > 0) {
         exit($exitCode);
     }
@@ -127,7 +108,7 @@ function executeCommand($command)
         $liveOutput     = fread($proc, 4096);
         $completeOutput = $completeOutput . $liveOutput;
         print $liveOutput;
-        @flush();
+        @ flush();
     }
 
     pclose($proc);
