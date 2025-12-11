@@ -35,7 +35,6 @@ if (file_exists('package.json') && file_exists('package-lock.json')) {
 
 // Files and directories not suitable for prod to be removed.
 $removables = [
-    '.git',
     '.gitignore',
     '.github',
     '.gitattributes',
