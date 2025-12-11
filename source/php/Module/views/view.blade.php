@@ -23,7 +23,9 @@
                 extends: 'template',
                 clickExpand: false,
                 filterPredicates:'dcterms:title,dcterms:description',
-                htemplate: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetView", ['lang' => $lang]); ?>',
+                htemplate: '<?php echo
+                    modularity_entryscape_render_blade_view('dataset.datasetView', ['lang' => $lang])
+                ; ?>',
             },
             {
                 block: 'datasetFacetSearchLayout',
@@ -31,15 +33,25 @@
                 includeExtras: false,
                 includeVisualizations: false,
                 includeDataPreview: false,
-                template: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetFacetSearchLayout"); ?>',
+                template: '<?php echo modularity_entryscape_render_blade_view('dataset.datasetFacetSearchLayout'); ?>',
             },
             {
                 block: 'datasetResults',
                 extends: 'results',
                 use: 'datasetlist',
                 live: 'polite',
-                templateFilter: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetResults", ['lang' => $lang, 'hasFilter' => true]); ?>',
-                templateNoFilter: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetResults", ['lang' => $lang, 'hasFilter' => false]); ?>',
+                templateFilter: '<?php echo
+                    modularity_entryscape_render_blade_view('dataset.datasetResults', [
+                        'lang' => $lang,
+                        'hasFilter' => true,
+                    ])
+                ; ?>',
+                templateNoFilter: '<?php echo
+                    modularity_entryscape_render_blade_view('dataset.datasetResults', [
+                        'lang' => $lang,
+                        'hasFilter' => false,
+                    ])
+                ; ?>',
             },
             {
                 block: 'datasetList',
@@ -56,15 +68,17 @@
                 includeDataPreview: false,
                 includeIndicators: false,
                 dependencyproperties: 'dcterms:publisher',
-                listplaceholder: '<?php echo modularity_entryscape_render_blade_view("dataset.notice", ["message" => $lang->noResults]); ?>',
+                listplaceholder: '<?php echo
+                    modularity_entryscape_render_blade_view('dataset.notice', ['message' => $lang->noResults])
+                ; ?>',
                 expandTooltip: '{{$lang->moreInfo}}',
                 unexpandTooltip: '{{$lang->lessInfo}}',
                 clickExpand: false,
                 define: 'datasetlist',
                 filterPredicates: 'dcterms:title,dcterms:description,dcterms:publisher,dcat:theme,dcat:keyword',
-                rowhead: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetListRowHead"); ?>',
+                rowhead: '<?php echo modularity_entryscape_render_blade_view('dataset.datasetListRowHead'); ?>',
                 rowexpand: ' ',
-                listbody: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetListBody"); ?>',
+                listbody: '<?php echo modularity_entryscape_render_blade_view('dataset.datasetListBody'); ?>',
                 layout: 'raw'
             },
             {
@@ -76,7 +90,7 @@
             {
                 block: 'previewTable',
                 extends: 'viewMetadata',
-                template: '<?php echo modularity_entryscape_render_blade_view("dataset.datasetPreview"); ?>'
+                template: '<?php echo modularity_entryscape_render_blade_view('dataset.datasetPreview'); ?>'
             }
         ]
     }]);

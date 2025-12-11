@@ -50,5 +50,17 @@ add_filter('/Modularity/externalViewPath', function ($arr) {
     return $arr;
 }, 10, 3);
 
+//Add domain to wpSeurity
+add_filter(
+    'WpSecurity/Csp',
+    function ($domains) {
+        if(!isset($domains['connect-src'])) {
+            $domains['connect-src'] = [];
+        }
+        $domains['connect-src'][] = 'static.infra.entryscape.com';
+        return $domains;
+    }
+);
+
 // Start application
 new ModularityEntryscape\App();
