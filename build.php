@@ -1,5 +1,6 @@
 #!/bin/php
 <?php
+
 // Only allow run from cli.
 if (php_sapi_name() !== 'cli') {
     exit(0);
@@ -8,7 +9,7 @@ if (php_sapi_name() !== 'cli') {
 /* Parameters:
  --no-composer      Does not install vendors. Just create the autoloader.
  --cleanup          Remove removeables.
-*/
+ */
 
 // Any command needed to run and build plugin assets when newly cheched out of repo.
 $buildCommands = [];
@@ -25,13 +26,12 @@ if (file_exists('composer.json')) {
 
 //Run npm if package.json is found
 if (file_exists('package.json') && file_exists('package-lock.json')) {
-	$buildCommands[] = 'npm ci --no-progress --no-audit';
+    $buildCommands[] = 'npm ci --no-progress --no-audit';
     $buildCommands[] = 'npm run build';
 } elseif (file_exists('package.json') && !file_exists('package-lock.json')) {
-	$buildCommands[] = 'npm install --no-progress --no-audit';
+    $buildCommands[] = 'npm install --no-progress --no-audit';
     $buildCommands[] = 'npm run build';
 }
-
 
 // Files and directories not suitable for prod to be removed.
 $removables = [
@@ -40,7 +40,7 @@ $removables = [
     '.gitattributes',
     'build.php',
     '.npmrc',
-    'composer.json',
+    //'composer.json',
     'composer.lock',
     'env-example',
     'webpack.config.js',
@@ -54,19 +54,18 @@ $removables = [
     './source/js/',
     'LICENSE',
     'babel.config.js',
-    'yarn.lock'
+    'yarn.lock',
 ];
-
 
 $dirName = basename(dirname(__FILE__));
 
 // Run all build commands.
-$output   = '';
+$output = '';
 $exitCode = 0;
 foreach ($buildCommands as $buildCommand) {
     print "---- Running build command '$buildCommand' for $dirName. ----\n";
     $timeStart = microtime(true);
-    $exitCode  = executeCommand($buildCommand);
+    $exitCode = executeCommand($buildCommand);
     $buildTime = round(microtime(true) - $timeStart);
     print "---- Done build command '$buildCommand' for $dirName.  Build time: $buildTime seconds. ----\n";
     if ($exitCode > 0) {
@@ -100,14 +99,14 @@ function executeCommand($command)
 
     $proc = popen($fullCommand, 'r');
 
-    $liveOutput     = '';
+    $liveOutput = '';
     $completeOutput = '';
 
     while (!feof($proc)) {
-        $liveOutput     = fread($proc, 4096);
+        $liveOutput = fread($proc, 4096);
         $completeOutput = $completeOutput . $liveOutput;
         print $liveOutput;
-        @ flush();
+        @flush();
     }
 
     pclose($proc);
