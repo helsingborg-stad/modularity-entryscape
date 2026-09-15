@@ -67,7 +67,9 @@ jobs:
           !/dist
           !/dist/**
           !/source
-          !/source/**
+          /source/*
+          !/source/php
+          !/source/php/**
           !/assets
           !/assets/**
           !/languages
