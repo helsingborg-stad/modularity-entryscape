@@ -66,8 +66,8 @@ jobs:
           !.gitignore
           !/dist
           !/dist/**
-          !/source/php
-          !/source/php/**
+          !/source
+          !/source/**
           !/assets
           !/assets/**
           !/languages
