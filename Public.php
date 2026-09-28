@@ -5,9 +5,11 @@ use ComponentLibrary\Init as ComponentLibraryInit;
 if (!function_exists('modularity_entryscape_render_blade_view')) {
     function modularity_entryscape_render_blade_view($view, $data = [], $compress = true)
     {
-        $componentLibrary = new ComponentLibraryInit([]);
-        $bladeEngine = $componentLibrary->getEngine();
         $viewPaths = [MODULARITYENTRYSCAPE_VIEW_PATH, MODULARITYENTRYSCAPE_MODULE_VIEW_PATH];
+        $bladeEngine = class_exists(\Municipio\Helper\ComponentBladeService::class)
+            ? \Municipio\Helper\ComponentBladeService::create($viewPaths)
+            : (new ComponentLibraryInit($viewPaths))->getEngine();
+
         $data = array_merge($data, array('errorMessage' => false));
 
         try {
