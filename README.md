@@ -7,6 +7,8 @@ Get the latest version and follow the installation steps bellow.
 ### Dependencies
 Wordpress, Municipio and Modularity (version 3.0 or higher)
 
+The Composer dependencies require PHP 8.2 through 8.5.
+
 ### Installing
 Get a development enviroment running by doing following:
 
